@@ -1,6 +1,7 @@
 {
   "0.0.0.1": {
     "status": "latest",
-    "description": "The first beta verison of the CatCompanion extension."
+    "description": "The first beta verison of the CatCompanion extension.",
+    "releaseDate": "19 August 2022"
   }
 }
