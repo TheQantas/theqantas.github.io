@@ -11,9 +11,13 @@
     
     --accent-frost: hsla(0,0%,13%,0.8);
     --frost-radius: 5px;
+    --transition-speed: 200ms;
 
     --counter: hsl(0,0%,95%);
     --counter-accent: hsl(0,0%,85%);
+    
+    font-family: 'Rokkitt', sans-serif;
+    color: var(--counter);
 }
 html {
     scroll-behavior: smooth;
@@ -22,10 +26,10 @@ body {
     margin: 0;
     background-color: var(--main);
 }
-* {
-    font-family: 'Rokkitt', sans-serif;
-    color: var(--counter);
+a {
+    color: inherit;
 }
+
 
 /* ~~ NAV BAR and SECTION ~~ */
 
@@ -34,10 +38,11 @@ nav {
     border-radius: 100px;
     background-color: var(--accent-frost);
     backdrop-filter: blur(var(--frost-radius));
-    height: 30px;
+    height: 36px;
+    box-sizing: border-box;
     padding: 3px;
     padding-left: 7px;
-    width: calc(70% - 10px);
+    width: 70%;
     left: 15%;
     top: 10px;
     display: grid;
@@ -52,7 +57,7 @@ nav > img {
     width: 100%;
 }
 nav > a {
-    transition: 200ms;
+    transition: var(--transition-speed);
     text-align: center;
     line-height: 30px;
     height: 30px;
@@ -90,7 +95,11 @@ section {
     opacity: 0;
 }
 section.fade-in {
-    animation: fade-in 350ms forwards;
+    animation: fade-in calc(var(--transition-speed) * 2) forwards;
+}
+section.force-in {
+    top: 0;
+    opacity: 1;
 }
 @keyframes fade-in {
     from {
@@ -118,11 +127,13 @@ section h3 {
     margin: 0;
     padding: 0;
 }
-section h4, section h5 {
+section h4, section h5, section blockquote, section figcaption, section figcaption > a {
     margin: 0;
     padding: 0;
-    font-size: 1.5em;
     color: var(--counter-accent);
+}
+section h4 {
+    font-size: 1.25em;
 }
 section h5 {
     font-size: 1em;
@@ -138,13 +149,13 @@ a:hover {
 
 /* ~~ HOME ~~ */
 
-#home {
-    width: 100%;
+#home-grid {
+    width: 70%;
     height: 420px;
     margin-top: 48px;
     box-sizing: border-box;
     display: grid;
-    padding: 0 15%;
+    margin-left: 15%;
     column-gap: 80px;
     grid-template-columns: 300px 1fr;
 }
@@ -191,30 +202,174 @@ a:hover {
     margin-right: 5px;
     fill: var(--counter-accent);
 }
-.project-desc > p, .project-desc > ol, .project-desc li {
+#project-grid p {
     text-align: justify;
     color: var(--counter-accent);
     margin: 0 5px;
 }
-.project-desc > ol, .project-desc > ul {
+#project-grid ol, #project-grid ul {
     padding-left: 1.25em;
+}
+#project-grid li {
+    text-align: justify;
+    color: var(--counter-accent);
+}
+.project-button {
+    color: var(--counter-accent);
+    transition: var(--transition-speed);
+    border: 1.5px solid currentColor;
+    margin: 5px 0;
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 1.25em;
+    border-radius: 100px;
+    text-decoration: none;
+}
+.project-button > img {
+    height: 1em;
+    position: relative;
+    top: 2px;
+    margin-right: 5px;
 }
 
 /* ~~ SKILLS ~~ */
 
 #skills-grid {
-    grid-template-columns: repeat(11,1fr);
+    grid-template-columns: repeat(12,1fr);
 }
-#skills-grid > img {
+#skills-grid img {
     width: 100%;
 }
 #skills-grid > span, #contact-grid > span {
     text-align: center;
     color: var(--counter-accent);
 }
+#skills-grid > div {
+    text-align: center;
+}
+.skill-spacer.b {
+    display: none;
+}
 
 /* ~~ CONTACT ~~ */
 
 #contact-grid {
     grid-template-columns: 2fr repeat(3,1fr 2fr);
+}
+
+/* ~~ RESPONSIVE ~~ */
+
+@media only screen and (max-width: 1200px) {
+    nav {
+        width: 840px;
+        left: calc(50% - 420px);
+    }
+    #home-grid, section {
+        width: 840px;
+        margin-left: calc(50% - 420px);
+        margin-right: calc(50% - 420px);
+    }
+}
+@media only screen and (max-width: 900px) {
+    nav {
+        width: calc(100% - 30px);
+        left: 15px;
+    }
+    #home-grid, section {
+        width: calc(100% - 30px);
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+    section {
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    #skills-grid {
+        grid-template-columns: repeat(10,1fr);
+    }
+    .skill-spacer.a {
+        display: none;
+    }
+}
+@media only screen and (max-width: 800px) {
+    #skills-grid {
+        grid-template-columns: repeat(6,1fr);
+    }
+    .skill-spacer {
+        display: none;
+    }
+    .skill-spacer.b {
+        display: block;
+    }
+
+    #home-grid {
+        row-gap: 5px;
+        grid-template-rows: 200px auto;
+        grid-template-columns: 100%;
+        height: auto;
+        margin-top: 56px;
+    }
+    .home-left {
+        display: block;
+        margin: 0 auto;
+        border-radius: 50%;
+        height: 100%;
+        width: auto;
+    }
+    .home-right {
+        text-align: center;
+    }
+
+    #project-grid {
+        grid-template-columns: repeat(3,1fr);
+    }
+    #project-grid > div:not(:first-child):not(.project-side) {
+        grid-column: span 2;
+    }
+}
+@media only screen and (max-width: 600px) {
+    nav {
+        grid-template-rows: 30px 30px;
+        grid-template-columns: repeat(3,1fr);
+        height: auto;
+        border-radius: 20px;
+        row-gap: 8px;
+    }
+    nav > img {
+        margin: 0 auto;
+        height: 100%;
+        width: auto;
+    }
+    .target {
+        top: -94px;
+    }
+    #home-grid {
+        margin-top: 94px;
+    }
+    .home-name {
+        font-size: 4em;
+    }
+
+    #project-grid {
+        grid-template-columns: 1fr;
+    }
+    .project-side {
+        display: none;
+    }
+
+    #skills-grid {
+        grid-template-columns: repeat(4,1fr);
+    }
+    .skill-spacer.b {
+        display: none;
+    }
+    
+    #contact-grid {
+        grid-template-columns: repeat(7,1fr);
+    }
+}
+@media only screen and (max-width: 450px) {
+    #contact-grid {
+        grid-template-columns: 0.5fr repeat(3,1fr 0.5fr);
+    }
 }
