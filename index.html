@@ -5,8 +5,10 @@
         <title>Quinlin Gregg's Portfolio</title>
         <link rel="shortcut icon" href="logo-square.png"/>
         <script src="index.js"></script>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
     </head>
     <body>
+        <div id="home" style="position: absolute;top:0;"></div>
         <nav id="top">
             <img src="logo.svg" alt="Personal Logo"/>
             <a href="#home" class="sel">Home</a>
@@ -16,7 +18,7 @@
             <a href="#contact">Contact</a>
         </nav>
 
-        <div id="home">
+        <div id="home-grid">
             <img class="home-left" src="portrait.webp" alt="Portrait"/>
             <div class="home-right">
                 <p>
@@ -36,14 +38,20 @@
                 <div class="project-tech">
                     <img src="tech/rust.svg" alt="Rust Logo" title="Rust"/>
                     <img src="tech/r.svg" alt="R Logo" title="R"/>
+                    <img src="tech/python.svg" alt="Python Logo" title="Python"/>
                 </div>
+                <a class="project-button" href="https://github.com/TheQantas/rusty-football" target="_blank">
+                    <img src="tech/github.svg" alt="GitHub Logo"/>
+                    Repo
+                    <img src="tech/external.svg" alt="External Link Icon" style="top:4px;"/>
+                </a>
                 <p>
                     This was the final project for my Engineering & Economic Financial Management class. The goal was
                     to build a profitable collection of bets on NFL games. This project consisted of two parts:
                 </p>
                 <ol>
                     <li>
-                        A quadrinomial tree implemented in Rust with each step representing each drive
+                        A quadrinomial tree was implemented in Rust with each step representing each drive
                         in an NFL game. This structure was inspired by the binomial tree method of 
                         pricing options.
                     </li>
@@ -62,17 +70,22 @@
                     <img src="tech/ts.svg" alt="TypeScript Logo" title="TypeScript"/>
                     <img src="tech/html5.svg" alt="HTML5 Logo" title="HTML5"/>
                 </div>
+                <a class="project-button" href="https://github.com/TheQantas/quinndo" target="_blank">
+                    <img src="tech/github.svg" alt="GitHub Logo"/>
+                    Repo
+                    <img src="tech/external.svg" alt="External Link Icon" style="top:4px;"/>
+                </a>
                 <p>
                     QUINNDO was a project to build a better version of LINDO/LINGO, languages often
                     used for linear optimization, in the browser. The main goal of the improvements was
-                    to build a better and more intuitive syntax. The editor can be found 
-                    <a href="https://theqantas.github.io/quinndo/editor.html" rel="_blank">here</a> and example programs in 
-                    QUINNDO can be found <a href="https://theqantas.github.io/quinndo/docs.html#examples" rel="_blank">here</a>.
+                    to build a better and more intuitive syntax, especially for graphs. The editor can be found 
+                    <a href="https://theqantas.github.io/quinndo/editor.html" target="_blank">here</a> and example programs in 
+                    QUINNDO can be found <a href="https://theqantas.github.io/quinndo/docs.html#examples" target="_blank">here</a>.
                 </p>
             </div>
 
             <div>
-                <h3>League V3</h3>
+                <h3>League V2</h3>
                 <div class="project-tech">
                     <img src="tech/html5.svg" alt="HTML5 Logo" title="HTML5"/>
                     <img src="tech/css3.svg" alt="CSS3 Logo" title="CSS3"/>
@@ -80,71 +93,140 @@
                     <img src="tech/nodejs.svg" alt="Node.js Logo" title="Node.js"/>
                     <img src="tech/mysql.svg" alt="MySQL Logo" title="MySQL"/>
                 </div>
+                <a class="project-button" href="https://github.com/TheQantas/league" target="_blank">
+                    <img src="tech/github.svg" alt="GitHub Logo"/>
+                    Repo
+                    <img src="tech/external.svg" alt="External Link Icon" style="top:4px;"/>
+                </a>
                 <p>
-                    This was a project.
+                    This was a project to simulate a football season. Teams would draft players where
+                    each player had stats based on Normal/Gaussian Distributions. These players
+                    would then play in simulated games until a champion was crowned.
+                </p>
+                <p>
+                    A new version of this project with a more accurate simulation and a college football
+                    version is currently under development using React and Next.js.
                 </p>
             </div>
-            <div class="project-side"></div>
+            <div class="project-side" style="background-image:url('backgrounds/theleaguev2.png');"></div>
 
-            <div class="project-side"></div>
+            <div class="project-side" style="background-image:url('backgrounds/football-field.jpg');"></div>
             <div>
                 <h3>CFB Ranker</h3>
                 <div class="project-tech">
                     <img src="tech/python.svg" alt="Python Logo" title="Python"/>
                 </div>
+                <a class="project-button" href="https://github.com/TheQantas/cfbranker" target="_blank">
+                    <img src="tech/github.svg" alt="GitHub Logo"/>
+                    Repo
+                    <img src="tech/external.svg" alt="External Link Icon" style="top:4px;"/>
+                </a>
+                <p>
+                    The goal of this project was to rank all teams in Division I college football
+                    (both FBS and FCS). The final scores of all college football games were pulled,
+                    and each team's performance in each game was scored to produce an overall score.
+                </p>
             </div>
+
+            <div>
+                <h3>Mastermind</h3>
+                <div class="project-tech">
+                    <img src="tech/kotlin.svg" alt="Kotlin Logo" title="Kotlin"/>
+                    <img src="tech/android-studio.svg" alt="Android Studio Logo" title="Android Studio"/>
+                </div>
+                <a class="project-button" href="https://github.com/TheQantas/mastermind" target="_blank">
+                    <img src="tech/github.svg" alt="GitHub Logo"/>
+                    Repo
+                    <img src="tech/external.svg" alt="External Link Icon" style="top:4px;"/>
+                </a>
+                <p>
+                    This was an app built for my Android App Development class. The app is an implementation
+                    of the game <a href="https://en.wikipedia.org/wiki/Mastermind_(board_game)" target="_blank">Mastermind</a>,
+                    done in Kotlin with Android Studio Giraffe. The app provides feedback for each guess on 
+                    the right in the form of filled in circles. It also provided the percent of remaining
+                    possible codes that were eliminated by each guess.
+                </p>
+            </div>
+            <div class="project-side" style="background-image:url('backgrounds/mastermind.png');"></div>
         </section>
 
         <section id="skills-grid">
             <div class="target" id="skills"></div>
             <h2>Skills</h2>
+            <div class="skill-spacer a"></div>
             <div class="skill-spacer"></div>
+            <div>
+                <img src="tech/ts.svg" alt="TypeScript Logo" title="TypeScript"/>
+                <span>TypeScript</span>
+            </div>
+            <div>
+                <img src="tech/js.svg" alt="JavaScript Logo" title="JavaScript"/>
+                <span>JavaScript</span>
+            </div>
+            <div>
+                <img src="tech/nodejs.svg" alt="Node.js Logo" title="Node.js"/>
+                <span>Node.js</span>
+            </div>
+            <div>
+                <img src="tech/react.svg" alt="React Logo" title="React"/>
+                <span>React</span>
+            </div>
+            <div>
+                <img src="tech/nextjs.svg" alt="Next.js Logo" title="Next.js"/>
+                <span>Next.js</span>
+            </div>
+            <div>
+                <img src="tech/html5.svg" alt="HTML5 Logo" title="HTML5"/>
+                <span>HTML5</span>
+            </div>
+            <div>
+                <img src="tech/css3.svg" alt="CSS3 Logo" title="CSS3"/>
+                <span>CSS3</span>
+            </div>
+            <div>
+                <img src="tech/ec2.svg" alt="Amazon EC2 Logo" title="Amazon EC2"/>
+                <span>EC2</span>
+            </div>
             <div class="skill-spacer"></div>
-            <img src="tech/ts.svg" alt="TypeScript Logo" title="TypeScript"/>
-            <img src="tech/js.svg" alt="JavaScript Logo" title="JavaScript"/>
-            <img src="tech/nodejs.svg" alt="Node.js Logo" title="Node.js"/>
-            <img src="tech/react.svg" alt="React Logo" title="React"/>
-            <img src="tech/nextjs.svg" alt="Next.js Logo" title="Next.js"/>
-            <img src="tech/html5.svg" alt="HTML5 Logo" title="HTML5"/>
-            <img src="tech/css3.svg" alt="CSS3 Logo" title="CSS3"/>
-            <div class="skill-spacer"></div>
-            <div class="skill-spacer"></div>
-
-            <div class="skill-spacer"></div>
-            <div class="skill-spacer"></div>
-            <span>TypeScript</span>
-            <span>JavaScript</span>
-            <span>Node.js</span>
-            <span>React</span>
-            <span>Next.js</span>
-            <span>HTML5</span>
-            <span>CSS3</span>
-            <div class="skill-spacer"></div>
-            <div class="skill-spacer"></div>
+            <div class="skill-spacer a"></div>
             
+            <div class="skill-spacer a"></div>
             <div class="skill-spacer"></div>
+            <div>
+                <img src="tech/digital-ocean.svg" alt="DigitalOcean Logo" title="DigitalOcean"/>
+                <span>Droplets</span>
+            </div>
+            <div>
+                <img src="tech/rust.svg" alt="Rust Logo" title="Rust"/>
+                <span>Rust</span>
+            </div>
+            <div>
+                <img src="tech/python.svg" alt="Python Logo" title="Python"/>
+                <span>Python</span>
+            </div>
+            <div>
+                <img src="tech/java.svg" alt="Java Logo" title="Java"/>
+                <span>Java</span>
+            </div>
+            <div class="skill-spacer b"></div>
+            <div>
+                <img src="tech/r.svg" alt="R Logo" title="R"/>
+                <span>R</span>
+            </div>
+            <div>
+                <img src="tech/mysql.svg" alt="MySQL Logo" title="MySQL"/>
+                <span>MySQL</span>
+            </div>
+            <div>
+                <img src="tech/android-studio.svg" alt="Android Studio Logo" title="Android Studio"/>
+                <span>Android Studio</span>
+            </div>
+            <div>
+                <img src="tech/kotlin.svg" alt="Kotlin Logo" title="Kotlin"/>
+                <span>Kotlin</span>
+            </div>
             <div class="skill-spacer"></div>
-            <img src="tech/rust.svg" alt="Rust Logo" title="Rust"/>
-            <img src="tech/python.svg" alt="Python Logo" title="Python"/>
-            <img src="tech/java.svg" alt="Java Logo" title="Java"/>
-            <img src="tech/r.svg" alt="R Logo" title="R"/>
-            <img src="tech/mysql.svg" alt="MySQL Logo" title="MySQL"/>
-            <img src="tech/android-studio.svg" alt="Android Studio Logo" title="Android Studio"/>
-            <img src="tech/kotlin.svg" alt="Kotlin Logo" title="Kotlin"/>
-            <div class="skill-spacer"></div>
-            <div class="skill-spacer"></div>
-            
-            <div class="skill-spacer"></div>
-            <div class="skill-spacer"></div>
-            <span>Rust</span>
-            <span>Python</span>
-            <span>Java</span>
-            <span>R</span>
-            <span>MySQL</span>
-            <span>Android Studio</span>
-            <span>Kotlin</span>
-            <div class="skill-spacer"></div>
-            <div class="skill-spacer"></div>
+            <div class="skill-spacer a"></div>
         </section>
 
         <section>
@@ -154,8 +236,8 @@
             <h4>With Minor in International Business</h4>
             <h3>Bachelor&apos;s in Financial Engineering</h3>
             <h4>
-                <blockquote style="margin:0">
-                    Financial Engineering: Financial engineering is an area of the financial sector that utilizes computer science, statistics, economics, and applied mathematics to solve quantitative financial problems.
+                <blockquote style="margin:0;text-align:justify;">
+                    Financial Engineering: an area of the financial sector that utilizes computer science, statistics, economics, and applied mathematics to solve quantitative financial problems.
                 </blockquote>
                 <figcaption>
                     <cite><a href="https://www.investopedia.com/terms/f/financialengineering.asp" target="_blank">Investopedia</a></cite>
@@ -171,15 +253,15 @@
             <h2>Contact</h2>
 
             <div class="contact-spacer"></div>
-            <a href="https://github.com/theqantas" href="_blank">
+            <a href="https://github.com/theqantas" target="_blank">
                 <img src="tech/github.svg" alt="GitHub Logo"/>
             </a>
             <div class="contact-spacer"></div>
-            <a href="https://linkedin.com/in/quinlin-gregg" href="_blank">
+            <a href="https://linkedin.com/in/quinlin-gregg" target="_blank">
                 <img src="tech/linkedin.svg" alt="LinkedIn Logo"/>
             </a>
             <div class="contact-spacer"></div>
-            <a href="mailto:quinlingregg@gmail.com" href="_blank">
+            <a href="mailto:quinlingregg@gmail.com" target="_blank">
                 <img src="tech/email.svg" alt="Email Logo"/>
             </a>
             <div class="contact-spacer"></div>
