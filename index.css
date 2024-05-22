@@ -127,12 +127,15 @@ section h3 {
     margin: 0;
     padding: 0;
 }
-section h4, section h5, section blockquote, section figcaption, section figcaption > a {
+section h4, section h5, section blockquote {
     margin: 0;
     padding: 0;
     color: var(--counter-accent);
 }
-section h4 {
+section blockquote {
+    font-weight: bold;
+}
+section h4, section blockquote {
     font-size: 1.25em;
 }
 section h5 {
